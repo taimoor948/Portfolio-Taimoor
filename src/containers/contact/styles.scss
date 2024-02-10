@@ -1,0 +1,51 @@
+/* styles.scss */
+
+.contact {
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.icon-with-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: var(--portfolio-main-color);
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    margin: 10px;
+    font-size: 80%;
+  }
+
+  &:hover {
+    color: #fcfdff;
+    transform: scale(1.1);
+  }
+
+  .out-class {
+    margin-top: 20px;
+  }
+}
+
+.out-class h1 {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  margin-top: 40px; /* Change the color as per your design */
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 10px;
+  }
+}
