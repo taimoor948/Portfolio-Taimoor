@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Portfolio-Taimoor/static/css/main.86fd2b31.css",
-    "main.js": "/Portfolio-Taimoor/static/js/main.648402aa.js",
+    "main.js": "/Portfolio-Taimoor/static/js/main.fabfdfa6.js",
     "static/media/image3.jpeg": "/Portfolio-Taimoor/static/media/image3.73734b00011cb4fcb057.jpeg",
     "static/media/image2.jpeg": "/Portfolio-Taimoor/static/media/image2.5975e3ac05301790b03c.jpeg",
     "static/media/image1.jpeg": "/Portfolio-Taimoor/static/media/image1.f5de5de358fa3d407c95.jpeg",
     "index.html": "/Portfolio-Taimoor/index.html",
     "main.86fd2b31.css.map": "/Portfolio-Taimoor/static/css/main.86fd2b31.css.map",
-    "main.648402aa.js.map": "/Portfolio-Taimoor/static/js/main.648402aa.js.map"
+    "main.fabfdfa6.js.map": "/Portfolio-Taimoor/static/js/main.fabfdfa6.js.map"
   },
   "entrypoints": [
     "static/css/main.86fd2b31.css",
-    "static/js/main.648402aa.js"
+    "static/js/main.fabfdfa6.js"
   ]
 }
