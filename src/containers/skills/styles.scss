@@ -1,74 +1,147 @@
-.skills{
-    &__content-wrapper{
-        display: flex;
-        padding: 20px;
-        gap: 20px;
+.skills {
+    &__content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        padding: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
 
-        &__inner-content{
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
+        &__inner-content {
+            background: var(--glass-background);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
 
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: var(--shadow-colored);
+                border-color: var(--portfolio-accent);
+            }
 
-            &__category-text{
+            &__category-text {
                 display: inline-block;
-                color: var(--portfolio-main-color);
-                font-size: 22px;
+                background: var(--portfolio-gradient-primary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-size: 2.2rem;
                 font-weight: 700;
-                line-height: 1rem;
-                letter-spacing: 0.5px;
+                line-height: 1.2;
+                letter-spacing: 0.1rem;
                 position: relative;
                 text-transform: uppercase;
-                padding: 5px 10px;
-                border-bottom: 2px solid var(--portfolio-main-color);
-            }
-
-            &__category-text::before , &__category-text::after{
-                position: absolute;
-                content: '';
-                width: 2px;
-                height: 5px;
-                background-color: var(--portfolio-main-color);
-                bottom: -1px;
-            }
-            &__category-text::before{
-                left: 0;
-            }
-            &__category-text::after{
-                right: 0;
-            }
-            div{
+                padding-bottom: 1.5rem;
+                margin-bottom: 3rem;
+                font-family: 'Poppins', sans-serif;
                 width: 100%;
-            }
+                text-align: center;
 
-            .progressbar-wrapper{
-                padding: 50px 0px 0px 0px;
-
-
-                p{
-                    font-size: 1.6rem;
-                    margin: 0 0 10px;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    color: #fefefe;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 3px;
+                    background: var(--portfolio-gradient-primary);
+                    border-radius: 2px;
                 }
             }
 
+            &__progressbar-container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .progressbar-wrapper {
+                margin-bottom: 2.5rem;
+                width: 100%;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .skill-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    width: 100%;
+
+                    p {
+                        font-size: 1.5rem;
+                        margin: 0;
+                        font-weight: 600;
+                        color: var(--portfolio-text-primary);
+                        font-family: 'Inter', sans-serif;
+                        flex: 1;
+                    }
+
+                    .percentage {
+                        font-size: 1.4rem;
+                        color: var(--portfolio-primary);
+                        font-weight: 700;
+                        font-family: 'Poppins', sans-serif;
+                        margin-left: 1rem;
+                        flex-shrink: 0;
+                    }
+                }
+
+                > div {
+                    width: 100%;
+                }
+
+                .rc-progress-line {
+                    height: 10px !important;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background: #e2e8f0;
+                    width: 100% !important;
+
+                    .rc-progress-line-trail {
+                        background: #e2e8f0 !important;
+                    }
+
+                    .rc-progress-line-path {
+                        background: var(--portfolio-gradient-primary) !important;
+                        box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
         }
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .skills {
+        &__content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem 1.5rem;
 
-@media only screen and (max-width:768px){
-    .skills{
-        &__content-wrapper{
-            flex-direction: column;
+            &__inner-content {
+                padding: 2rem;
+
+                &__category-text {
+                    font-size: 1.8rem;
+                }
+
+                .progressbar-wrapper {
+                    margin-bottom: 2rem;
+
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
         }
-    }
-    .skills__content-wrapper__inner-content__progressbar-container{
-        margin-bottom: 20px;
     }
 }
     

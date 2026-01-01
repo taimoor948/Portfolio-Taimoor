@@ -39,11 +39,14 @@ const Skills = () => {
                     iterationCount={1}
                   >
                     <div className="progressbar-wrapper" key={j}>
-                      <p>{skillItem.skillName}</p>
+                      <div className="skill-header">
+                        <p>{skillItem.skillName}</p>
+                        <span className="percentage">{skillItem.percentage}%</span>
+                      </div>
                       <Line
                         percent={skillItem.percentage}
                         strokeWidth="2"
-                        strokeColor="var(--portfolio-main-color)"
+                        strokeColor="var(--portfolio-primary)"
                         trailWidth="2"
                         strokeLinecap="square"
                       />

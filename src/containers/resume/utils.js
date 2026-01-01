@@ -1,37 +1,42 @@
 export const data = {
     experience: [
       {
-        title: "Web Developer intern at NCL-NED",
-        subTitle: "Karachi, Pakistan",
+        title: "Development Intern",
+        subTitle: "National Center of Cyber Security (NCCS) | Sep 2024 - Nov 2024",
         description:
-          " React.Js, UI/UX Design [ Sep(2023) -- Present ]",
+          "Built a threat intelligence detector using Django, HTML, CSS, and JavaScript to analyze suspicious social media posts based on keywords.",
       },
       {
-        title: "Freelancer on Fiverr ,",
-        subTitle: "Remote",
+        title: "Next.js Trainee (Remote)",
+        subTitle: "Ztuth | Jan 2025 - Feb 2025",
         description:
-          " 3 Years Experience of Graphic designing [ 2020 -- Present",
+          "Worked on a dental application using Electron.js for the frontend and Nest.js for the backend.",
       },
-     
+      {
+        title: "Software Engineering Intern",
+        subTitle: "Orange Pro AI | Mar 2025 - Jun 2025",
+        description:
+          "Assisted in applying core software engineering principles to live Python-based projects.",
+      },
+      {
+        title: "IT Developer",
+        subTitle: "Universities & Boards Department, Government of Sindh | Aug 2025 - Dec 2025",
+        description:
+          "Contributed to development and maintenance of the official departmental web portal, including job and information sections. Assisted in digitization of departmental operations, streamlining file tracking, CM summaries, and workflow automation.",
+      },
     ],
     education: [
       {
-        title: " Computer System Engineering ,",
-        subTitle: "NED University/Karachi",
+        title: "B.E. in Computer Systems Engineering",
+        subTitle: "NED University of Engineering and Technology | 2022 - Present",
         description:
-          "Bachelor of Engineering [ 2022 -- 2026 ]",
+          "Currently pursuing Bachelor of Engineering degree with focus on full-stack development, software engineering, and modern web technologies.",
       },
       {
-        title: "Intermediate ,",
-        subTitle: "DJ Sindh Govt College/Karachi",
+        title: "Intermediate",
+        subTitle: "DJ Sindh Govt College, Karachi | 2020 - 2022",
         description:
-          "[ 2020 -- 2022 ]",
-      },
-      {
-        title: "Matric ,",
-        subTitle: "Ayesha Academy/Karachi",
-        description:
-          "[ 2007 -- 2020 ]",
+          "Completed Higher Secondary Education with strong foundation in science and mathematics.",
       },
     ],
   };

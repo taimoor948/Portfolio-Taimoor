@@ -1,12 +1,17 @@
 .navbar{
-    background-color: var(--portfolio-nav-background-color);
+    background: var(--glass-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--glass-border);
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
+    top: 0;
     z-index: 1000;
+    box-shadow: var(--shadow-md);
 
     &__container{
         display: flex;
@@ -15,39 +20,65 @@
         height: inherit;
         padding: 0px 20px;
         flex: 1;
+        
         &__logo{
-            color: var(--portfolio-main-color);
+            color: var(--portfolio-primary);
             cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            
+            &:hover{
+                color: var(--portfolio-accent);
+                transform: scale(1.05);
+            }
         }
 
         &__menu{
             display: flex;
             list-style: none;
             text-align: center;
+            margin-left: auto;
 
             &__item{
                 line-height: 40px;
                 margin-right: 1.5rem;
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                position: relative;
 
                 &::after{
                     content: '';
-                    display: block;
-                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 2px;
                     width: 0;
-                    background: transparent;
-                    transition: all 0.5s ease;
+                    background: var(--portfolio-gradient-primary);
+                    transition: all 0.3s ease;
+                    border-radius: 2px;
                 }
 
                 &:hover::after{
                     width: 100%;
-                    background: var(--portfolio-main-color);
                 }
 
                 &__links{
-                    color: var(--portfolio-main-color);
+                    color: var(--portfolio-text-secondary);
                     text-decoration: none;
-                    padding: 0.5rem;
+                    padding: 0.5rem 1rem;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    
+                    &:hover{
+                        color: var(--portfolio-primary);
+                    }
                 }
             }
         }
@@ -67,27 +98,40 @@
         position: absolute;
         top: 80px;
         left: -110%;
-        opacity: 1;
-        transition: all 0.5s ease;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        background: var(--glass-background);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 0 0 20px 20px;
 
         &.active{
-            background: #1a1a44;
             left: 0px;
             opacity: 1;
-            
+            box-shadow: var(--shadow-lg);
         }
 
         &__item{
-            border-bottom: 1px solid #282828;
+            border-bottom: 1px solid var(--glass-border);
             margin: 0px;
-            padding: 20px 0px; 
+            padding: 20px 0px;
+            
+            &:last-child{
+                border-bottom: none;
+            }
         }
     }
 
     .nav-icon{
         display: block;
         cursor: pointer;
-        color: var(--portfolio-main-color);
+        color: var(--portfolio-primary);
         padding-right: 20px;
+        transition: all 0.3s ease;
+        
+        &:hover{
+            color: var(--portfolio-accent);
+            transform: scale(1.1);
+        }
     }
 }

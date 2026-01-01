@@ -1,85 +1,290 @@
-.home{
-    background-size: 20%;
+.home {
     position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 20px;
 
-    &__text-wrapper{
+    &__particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__text-wrapper {
+        margin-bottom: 4rem;
+    }
+
+    &__greeting {
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--portfolio-text-secondary);
+        margin-bottom: 1rem;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.1rem;
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    &__name {
+        font-size: 7rem;
+        font-weight: 800;
+        background: var(--portfolio-gradient-hero);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 2rem;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        filter: drop-shadow(0 4px 12px rgba(79, 70, 229, 0.5)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        font-family: 'Poppins', sans-serif;
+        
+        .gradient-text {
+            background: var(--portfolio-gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.4)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+        }
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        color: var(--portfolio-text-muted);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-family: 'Inter', sans-serif;
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    &__cta {
         display: flex;
+        gap: 2rem;
         justify-content: center;
+        margin-bottom: 4rem;
+        flex-wrap: wrap;
+    }
 
-
-        h1{
-            color: var(--portfolio-main-color);
-            margin: 0px;
-            font-weight: 500;
-            font-size: 7.5rem;
-            line-height: 10rem;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typingEffectAnimation 2.5s steps(30,end);
+    &__social {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            color: var(--portfolio-text-secondary);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
             
-        }
-    }
-    &__contact-me{
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-
-        button{
-            cursor: pointer;
-            padding: 10px 70px;
-            font-size: 2rem;
-            background: transparent;
-            color: var(--portfolio-main-color);
-            border: 1.5px solid var(--portfolio-main-color);
-            border-radius: 4px;
-            font-weight: 500;
-
-            &:hover{
-                background: var(--portfolio-main-color);
-                color: #000000;
-
+            &:hover {
+                background: var(--portfolio-primary);
+                color: white;
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-glow);
             }
-
         }
     }
 
-
+    &__bg-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+            
+            &-1 {
+                width: 500px;
+                height: 500px;
+                top: -150px;
+                left: -150px;
+                animation-delay: 0s;
+            }
+            
+            &-2 {
+                width: 400px;
+                height: 400px;
+                bottom: -100px;
+                right: -100px;
+                background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%);
+                animation-delay: 7s;
+            }
+            
+            &-3 {
+                width: 350px;
+                height: 350px;
+                top: 50%;
+                right: 10%;
+                background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+                animation-delay: 14s;
+            }
+        }
+    }
 }
 
+.btn {
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+    
+    &:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    &-primary {
+        background: var(--portfolio-gradient-primary);
+        color: white;
+        box-shadow: var(--shadow-md);
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+    }
+    
+    &-secondary {
+        background: transparent;
+        color: var(--portfolio-primary);
+        border: 2px solid var(--portfolio-primary);
+        
+        &:hover {
+            background: var(--portfolio-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+    }
+    
+    &-accent {
+        background: var(--portfolio-gradient-accent);
+        color: white;
+        box-shadow: var(--shadow-md);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        text-decoration: none;
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        svg {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(50px, -50px);
+    }
+    66% {
+        transform: translate(-50px, 50px);
+    }
+}
+
+/* Responsive Design */
 @media only screen and (max-width: 550px) {
-    .home__text-wrapper h1 {
-        font-size: 3rem;
-        line-height: 5rem;
+    .home__name {
+        font-size: 4rem;
+    }
+    
+    .home__title {
+        font-size: 2rem;
+    }
+    
+    .home__description {
+        font-size: 1.4rem;
+    }
+    
+    .home__greeting {
+        font-size: 1.6rem;
+    }
+    
+    .btn {
+        padding: 1.2rem 3rem;
+        font-size: 1.4rem;
     }
 }
 
 @media only screen and (min-width: 551px) and (max-width: 768px) {
-    .home__text-wrapper h1 {
-        font-size: 4rem;
-        line-height: 6rem;
+    .home__name {
+        font-size: 5rem;
+    }
+    
+    .home__title {
+        font-size: 2.5rem;
+    }
+    
+    .home__description {
+        font-size: 1.6rem;
     }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 990px) {
-    .home__text-wrapper h1 {
+    .home__name {
         font-size: 6rem;
-        line-height: 8rem;
     }
-}
-
-@keyframes typingEffectAnimation{
-
-
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
+    
+    .home__title {
+        font-size: 3rem;
     }
 }

@@ -1,51 +1,168 @@
-/* styles.scss */
-
 .contact {
-  text-align: center;
-}
+  height: 100%;
+  overflow-y: auto;
 
-.contact-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.icon-with-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-  color: var(--portfolio-main-color);
-  font-size: 18px;
-
-  @media (max-width: 768px) {
-    margin: 10px;
-    font-size: 80%;
+  &__content {
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  &:hover {
-    color: #fcfdff;
-    transform: scale(1.1);
+  &__intro {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    h2 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: var(--portfolio-gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    p {
+      font-size: 1.7rem;
+      color: var(--portfolio-text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+    }
   }
 
-  .out-class {
-    margin-top: 20px;
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  &__card {
+    background: var(--glass-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-colored);
+      border-color: var(--portfolio-primary);
+
+      .contact__card__icon {
+        transform: scale(1.1);
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    &__content {
+      flex: 1;
+      text-align: left;
+
+      h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--portfolio-text-primary);
+        margin-bottom: 0.5rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      p {
+        font-size: 1.4rem;
+        color: var(--portfolio-text-muted);
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+      }
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    padding: 3rem;
+    background: var(--glass-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+
+    p {
+      font-size: 1.8rem;
+      color: var(--portfolio-text-secondary);
+      margin: 0;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      
+      &::before {
+        content: '✨ ';
+      }
+      
+      &::after {
+        content: ' ✨';
+      }
+    }
   }
 }
 
-.out-class h1 {
-  font-size: 1.5rem;
-  color: whitesmoke;
-  margin-top: 40px; /* Change the color as per your design */
-  font-size: 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .contact {
-    padding: 10px;
+    &__content {
+      padding: 2rem 1.5rem;
+    }
+
+    &__intro {
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    &__card {
+      padding: 2rem;
+      flex-direction: column;
+      text-align: center;
+
+      &__content {
+        text-align: center;
+      }
+    }
+
+    &__cta {
+      padding: 2rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
