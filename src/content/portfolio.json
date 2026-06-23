@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Sindh Universities Portal",
+      "description": "Official government portal for Sindh universities & boards with QR verification, role-based access, and dynamic modules",
+      "tech": ["Next.js", "TypeScript", "PostgreSQL"],
+      "image": "/images/image1.jpeg",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "name": "Hospital Management System",
+      "description": "Complete healthcare solution for Fatima Trust Hospital with patient registration, billing, and pharmacy management",
+      "tech": ["Next.js", "TypeScript", "Prisma"],
+      "image": "/images/image2.jpeg",
+      "link": ""
+    },
+    {
+      "id": 3,
+      "name": "Research Workflow Platform",
+      "description": "Centralized platform for university research with submissions, versioning, and compliance automation",
+      "tech": ["Next.js", "TypeScript", "Prisma"],
+      "image": "/images/image3.jpeg",
+      "link": ""
+    },
+    {
+      "id": 4,
+      "name": "4-Loop",
+      "description": "Enabled secure document editing and seamless team collaboration.",
+      "tech": ["Next.js", "Firebase", "Clerk", "PostgreSQL"],
+      "image": "/images/image4.jpeg",
+      "link": "https://4-loop.vercel.app/"
+    },
+    {
+      "id": 5,
+      "name": "Taimoor's Books Ltd",
+      "description": "Fully responsive MERN stack website, Taimoor's Books Ltd",
+      "tech": ["JavaScript", "MERN", "MongoDB"],
+      "image": "/images/image5.jpeg",
+      "link": "https://www.linkedin.com/posts/taimoor-habib_antdesign-aos-fullstackdeveloper-activity-7176894997366009856-cZ6p?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIFftwB-Dr5sO7u6M55xVozC2C7L2xjKws"
+    },
+    {
+      "id": 6,
+      "name": "Google-Oauth Authentication using Passport.js",
+      "description": "Google OAuth authentication flow built with Passport.js on the MERN stack.",
+      "tech": ["JavaScript", "MERN", "MongoDB"],
+      "image": "/images/image6.jpeg",
+      "link": "https://www.linkedin.com/posts/taimoor-habib_%F0%9D%90%93%F0%9D%90%9A%F0%9D%90%A2%F0%9D%90%A6%F0%9D%90%A8%F0%9D%90%A8%F0%9D%90%AB%F0%9D%90%AC-%F0%9D%90%8C%F0%9D%90%AE%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%9C-%F0%9D%90%96%F0%9D%90%9E%F0%9D%90%9B%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%AD-activity-7227686366992629760-JEPY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEIFftwB-Dr5sO7u6M55xVozC2C7L2xjKws"
+    }
+  ]
+}

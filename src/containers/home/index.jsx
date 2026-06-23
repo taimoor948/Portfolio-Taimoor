@@ -6,6 +6,11 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import "./styles.scss";
 
+// ── CMS-driven content ─────────────────────────────────────
+// Name, title, greeting and tagline come from about.json so the
+// CMS admin can update the hero section without touching code.
+import aboutContent from "../../content/about.json";
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -157,7 +162,7 @@ const Home = () => {
             start={{ opacity: 0, transform: "translateY(-50px)" }}
             end={{ opacity: 1, transform: "translateY(0)" }}
           >
-            <h3 className="home__greeting">Hello, I'm</h3>
+            <h3 className="home__greeting">{aboutContent.greeting}</h3>
           </Animate>
           
           <Animate
@@ -167,7 +172,7 @@ const Home = () => {
             start={{ opacity: 0, transform: "translateX(-50px)" }}
             end={{ opacity: 1, transform: "translateX(0)" }}
           >
-            <h1 className="home__name">Taimoor Habib</h1>
+            <h1 className="home__name">{aboutContent.name}</h1>
           </Animate>
           
           <Animate
@@ -178,7 +183,7 @@ const Home = () => {
             end={{ opacity: 1, transform: "translateX(0)" }}
           >
             <h2 className="home__title">
-              <span className="gradient-text">Full-Stack Developer</span>
+              <span className="gradient-text">{aboutContent.title}</span>
             </h2>
           </Animate>
           
@@ -190,7 +195,7 @@ const Home = () => {
             end={{ opacity: 1, transform: "translateY(0)" }}
           >
             <p className="home__description">
-              Specializing in MERN & Next.js | Building secure, collaborative web applications with modern frameworks
+              {aboutContent.tagline}
             </p>
           </Animate>
         </div>
@@ -223,10 +228,10 @@ const Home = () => {
           end={{ opacity: 1 }}
         >
           <div className="home__social">
-            <a href="https://github.com/taimoor948" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href={aboutContent.socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-link">
               <FaGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/taimoor-habib/" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href={aboutContent.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
               <FaLinkedin size={24} />
             </a>
           </div>
