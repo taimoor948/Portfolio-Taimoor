@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# netlify.toml — Netlify build & redirect configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+[build]
+  # Tell Netlify how to build and where the output lives
+  command = "npm run build"
+  publish = "build"
+
+# ─── Redirect rules (ORDER MATTERS — first match wins) ───────────────────────
+
+# FIX 3: Explicitly pass through all /admin/* requests to their real files.
+# Without this rule, Netlify's SPA catch-all below would intercept /admin/
+# and serve your React app's index.html instead of the CMS's own index.html,
+# resulting in a blank page (React mounts but finds no #root content to show).
+# The 200 status means "serve the file as-is" (no redirect, no rewrite loop).
+[[redirects]]
+  from   = "/admin/*"
+  to     = "/admin/:splat"
+  status = 200
+
+# SPA catch-all: send every other unmatched route to React's index.html
+# so client-side routing (React Router) works correctly on page refresh.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
