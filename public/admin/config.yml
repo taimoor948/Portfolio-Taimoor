@@ -1,0 +1,158 @@
+# ─────────────────────────────────────────────────────────
+# Decap CMS Configuration
+# Docs: https://decapcms.org/docs/
+# ─────────────────────────────────────────────────────────
+
+# Backend: Netlify Identity + Git Gateway
+# Git Gateway proxies CMS commits through Netlify without
+# exposing your GitHub credentials.
+backend:
+  name: git-gateway
+  branch: main          # Change to "master" if that is your default branch
+
+# Allow editors to save drafts without publishing immediately
+publish_mode: editorial_workflow
+
+# ─── Media / Image Uploads ────────────────────────────────
+# Files are committed into src/images so existing imports
+# keep working. public_folder is the URL prefix used in JSON.
+media_folder: "src/images"
+public_folder: "/images"
+
+# ─────────────────────────────────────────────────────────
+# Collections
+# Each collection maps to one JSON file in src/content/
+# ─────────────────────────────────────────────────────────
+collections:
+
+  # ── About ──────────────────────────────────────────────
+  - name: "about"
+    label: "About"
+    files:
+      - name: "about"
+        label: "About Me"
+        file: "src/content/about.json"
+        fields:
+          - { label: "Full Name",      name: name,     widget: string }
+          - { label: "Page Title",     name: title,    widget: string }
+          - { label: "Greeting Text",  name: greeting, widget: string }
+          - { label: "Tagline",        name: tagline,  widget: string }
+          - label: "Job Summary"
+            name: jobSummary
+            widget: text
+          - label: "Contact Page Intro"
+            name: contactIntro
+            widget: text
+          - label: "Availability Line"
+            name: availability
+            widget: string
+          - label: "Personal Details"
+            name: personalDetails
+            widget: list
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Value", name: value, widget: string }
+          - label: "Social Links"
+            name: socialLinks
+            widget: object
+            fields:
+              - { label: "GitHub URL",   name: github,          widget: string }
+              - { label: "LinkedIn URL", name: linkedin,        widget: string }
+              - { label: "WhatsApp URL", name: whatsapp,        widget: string }
+              - { label: "LinkedIn Profile URL", name: linkedinProfile, widget: string }
+              - { label: "Website URL",  name: website,         widget: string }
+
+  # ── Skills ─────────────────────────────────────────────
+  - name: "skills"
+    label: "Skills"
+    files:
+      - name: "skills"
+        label: "Skills"
+        file: "src/content/skills.json"
+        fields:
+          - label: "Skill Categories"
+            name: skillCategories
+            widget: list
+            fields:
+              - { label: "Category Label", name: label, widget: string }
+              - label: "Skills"
+                name: skills
+                widget: list
+                fields:
+                  - { label: "Skill Name",   name: skillName,   widget: string }
+                  - { label: "Percentage",   name: percentage,  widget: string, hint: "Enter a number between 0 and 100" }
+
+  # ── Resume ─────────────────────────────────────────────
+  - name: "resume"
+    label: "Resume"
+    files:
+      - name: "resume"
+        label: "Resume"
+        file: "src/content/resume.json"
+        fields:
+          - label: "Experience"
+            name: experience
+            widget: list
+            fields:
+              - { label: "Job Title",    name: title,       widget: string }
+              - { label: "Subtitle",     name: subTitle,    widget: string, hint: "e.g. Company Name | Start - End" }
+              - { label: "Description",  name: description, widget: text }
+          - label: "Education"
+            name: education
+            widget: list
+            fields:
+              - { label: "Degree / Course", name: title,       widget: string }
+              - { label: "Subtitle",        name: subTitle,    widget: string, hint: "e.g. Institution | Start - End" }
+              - { label: "Description",     name: description, widget: text }
+
+  # ── Portfolio ──────────────────────────────────────────
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - name: "portfolio"
+        label: "Portfolio Projects"
+        file: "src/content/portfolio.json"
+        fields:
+          - label: "Projects"
+            name: projects
+            widget: list
+            fields:
+              - { label: "Project ID",    name: id,          widget: number }
+              - { label: "Project Name",  name: name,        widget: string }
+              - { label: "Description",   name: description, widget: text }
+              - label: "Tech Stack"
+                name: tech
+                widget: list
+                field: { label: "Technology", name: tech, widget: string }
+              - { label: "Cover Image",   name: image,       widget: image, required: false }
+              - { label: "Live URL",      name: link,        widget: string, required: false }
+
+  # ── Contact ────────────────────────────────────────────
+  - name: "contact"
+    label: "Contact"
+    files:
+      - name: "contact"
+        label: "Contact Info"
+        file: "src/content/contact.json"
+        fields:
+          - { label: "Section Heading",  name: introHeading, widget: string }
+          - { label: "Intro Text",       name: introText,    widget: text }
+          - { label: "CTA Text",         name: ctaText,      widget: string }
+          - label: "Contact Cards"
+            name: contacts
+            widget: list
+            fields:
+              - label: "Icon Name"
+                name: iconName
+                widget: select
+                options:
+                  - FaPhone
+                  - FaEnvelope
+                  - FaWhatsapp
+                  - FaLinkedin
+                  - FaGithub
+                  - FaGlobe
+              - { label: "Label",  name: label, widget: string }
+              - { label: "Value",  name: value, widget: string }
+              - { label: "Link",   name: link,  widget: string }
+              - { label: "Color (hex)", name: color, widget: string }

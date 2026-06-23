@@ -1,0 +1,23 @@
+{
+  "name": "Taimoor Habib",
+  "title": "Full-Stack Developer",
+  "greeting": "Hello, I'm",
+  "tagline": "Specializing in MERN & Next.js | Building secure, collaborative web applications with modern frameworks",
+  "jobSummary": "A highly motivated Full-Stack Developer specializing in MERN and Next.js. Experienced in building secure, collaborative web applications with modern frameworks and real-time features. Proven track record in developing government portals, healthcare management systems, and research workflow platforms. Currently pursuing B.E. in Computer Systems Engineering at NED University with hands-on experience at National Center of Cyber Security (NCCS), Ztuth, and Orange Pro AI.",
+  "contactIntro": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+  "availability": "Available for freelance opportunities and full-time positions",
+  "personalDetails": [
+    { "label": "Name", "value": "Taimoor Habib" },
+    { "label": "Location", "value": "Karachi, Pakistan" },
+    { "label": "Email", "value": "taimoorhabib948@gmail.com" },
+    { "label": "Phone", "value": "+92-3042872301" },
+    { "label": "LinkedIn", "value": "TaimoorHabib" }
+  ],
+  "socialLinks": {
+    "github": "https://github.com/taimoor948",
+    "linkedin": "https://www.linkedin.com/in/taimoor-habib/",
+    "whatsapp": "https://wa.me/923042872301",
+    "linkedinProfile": "https://www.linkedin.com/in/taimoor-habib-a50b5026a/",
+    "website": "https://taimoorhabib.com"
+  }
+}

@@ -3,28 +3,30 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import PageHeaderContent from "../../components/PageHeaderContent";
 import { Animate } from "react-simple-animate";
 import "./styles.scss";
-import { SiMongodb, SiPostgresql, SiReact, SiNextdotjs, SiNodedotjs, SiTypescript, SiPython, SiDocker } from "react-icons/si";
+import {
+  SiMongodb, SiPostgresql, SiReact, SiNextdotjs,
+  SiNodedotjs, SiTypescript, SiPython, SiDocker,
+} from "react-icons/si";
 
-const personalDetails = [
-  { label: "Name", value: "Taimoor Habib" },
-  { label: "Location", value: "Karachi, Pakistan" },
-  { label: "Email", value: "taimoorhabib948@gmail.com" },
-  { label: "Phone", value: "+92-3042872301" },
-  { label: "LinkedIn", value: "TaimoorHabib" },
-];
+// ── CMS-driven content ─────────────────────────────────────
+// All editable text lives in src/content/about.json.
+// Decap CMS commits changes to that file; React reads it at
+// build time, so the UI updates automatically on next deploy.
+import aboutContent from "../../content/about.json";
 
-const jobSummary =
-  "A highly motivated Full-Stack Developer specializing in MERN and Next.js. Experienced in building secure, collaborative web applications with modern frameworks and real-time features. Proven track record in developing government portals, healthcare management systems, and research workflow platforms. Currently pursuing B.E. in Computer Systems Engineering at NED University with hands-on experience at National Center of Cyber Security (NCCS), Ztuth, and Orange Pro AI.";
+const { personalDetails, jobSummary } = aboutContent;
 
+// Tech stack icons are code-only (not editable via CMS) because
+// react-icons cannot be serialised into JSON. Add/remove entries here.
 const techStack = [
-  { icon: SiReact, name: "React.js", color: "#61DAFB" },
-  { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
-  { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
-  { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-  { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
-  { icon: SiPostgresql, name: "PostgreSQL", color: "#4169E1" },
-  { icon: SiPython, name: "Python", color: "#3776AB" },
-  { icon: SiDocker, name: "Docker", color: "#2496ED" },
+  { icon: SiReact,     name: "React.js",    color: "#61DAFB" },
+  { icon: SiNextdotjs, name: "Next.js",     color: "#000000" },
+  { icon: SiNodedotjs, name: "Node.js",     color: "#339933" },
+  { icon: SiTypescript,name: "TypeScript",  color: "#3178C6" },
+  { icon: SiMongodb,   name: "MongoDB",     color: "#47A248" },
+  { icon: SiPostgresql,name: "PostgreSQL",  color: "#4169E1" },
+  { icon: SiPython,    name: "Python",      color: "#3776AB" },
+  { icon: SiDocker,    name: "Docker",      color: "#2496ED" },
 ];
 
 const About = () => {
@@ -44,7 +46,8 @@ const About = () => {
             end={{ opacity: 1, transform: "translateY(0)" }}
           >
             <div className="about__card">
-              <h3 className="about__card__title">Full-Stack Developer</h3>
+              {/* title comes from about.json → title field */}
+              <h3 className="about__card__title">{aboutContent.title}</h3>
               <p className="about__card__text">{jobSummary}</p>
             </div>
           </Animate>

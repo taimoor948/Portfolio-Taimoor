@@ -1,42 +1,11 @@
-export const data = {
-    experience: [
-      {
-        title: "Development Intern",
-        subTitle: "National Center of Cyber Security (NCCS) | Sep 2024 - Nov 2024",
-        description:
-          "Built a threat intelligence detector using Django, HTML, CSS, and JavaScript to analyze suspicious social media posts based on keywords.",
-      },
-      {
-        title: "Next.js Trainee (Remote)",
-        subTitle: "Ztuth | Jan 2025 - Feb 2025",
-        description:
-          "Worked on a dental application using Electron.js for the frontend and Nest.js for the backend.",
-      },
-      {
-        title: "Software Engineering Intern",
-        subTitle: "Orange Pro AI | Mar 2025 - Jun 2025",
-        description:
-          "Assisted in applying core software engineering principles to live Python-based projects.",
-      },
-      {
-        title: "IT Developer",
-        subTitle: "Universities & Boards Department, Government of Sindh | Aug 2025 - Dec 2025",
-        description:
-          "Contributed to development and maintenance of the official departmental web portal, including job and information sections. Assisted in digitization of departmental operations, streamlining file tracking, CM summaries, and workflow automation.",
-      },
-    ],
-    education: [
-      {
-        title: "B.E. in Computer Systems Engineering",
-        subTitle: "NED University of Engineering and Technology | 2022 - Present",
-        description:
-          "Currently pursuing Bachelor of Engineering degree with focus on full-stack development, software engineering, and modern web technologies.",
-      },
-      {
-        title: "Intermediate",
-        subTitle: "DJ Sindh Govt College, Karachi | 2020 - 2022",
-        description:
-          "Completed Higher Secondary Education with strong foundation in science and mathematics.",
-      },
-    ],
-  };
+/**
+ * resume/utils.js
+ *
+ * Previously held hardcoded arrays. Now re-exports from the
+ * centralised JSON file so Decap CMS edits are reflected here
+ * automatically without touching React component code.
+ */
+import resumeContent from "../../content/resume.json";
+
+// Named export keeps the existing import { data } in index.jsx working.
+export const data = resumeContent;

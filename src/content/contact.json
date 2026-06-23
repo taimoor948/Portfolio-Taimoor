@@ -1,0 +1,49 @@
+{
+  "introHeading": "Let's Work Together",
+  "introText": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+  "ctaText": "Available for freelance opportunities and full-time positions",
+  "contacts": [
+    {
+      "iconName": "FaPhone",
+      "label": "Phone",
+      "value": "+92-3042872301",
+      "link": "tel:+923042872301",
+      "color": "#10b981"
+    },
+    {
+      "iconName": "FaEnvelope",
+      "label": "Email",
+      "value": "taimoorhabib948@gmail.com",
+      "link": "mailto:taimoorhabib948@gmail.com",
+      "color": "#ec4899"
+    },
+    {
+      "iconName": "FaWhatsapp",
+      "label": "WhatsApp",
+      "value": "Message Me",
+      "link": "https://wa.me/923042872301",
+      "color": "#25D366"
+    },
+    {
+      "iconName": "FaLinkedin",
+      "label": "LinkedIn",
+      "value": "TaimoorHabib",
+      "link": "https://www.linkedin.com/in/taimoor-habib-a50b5026a/",
+      "color": "#0077B5"
+    },
+    {
+      "iconName": "FaGithub",
+      "label": "GitHub",
+      "value": "@taimoorhabib",
+      "link": "https://github.com/taimoor948",
+      "color": "#ffffff"
+    },
+    {
+      "iconName": "FaGlobe",
+      "label": "Website",
+      "value": "Portfolio",
+      "link": "https://taimoorhabib.com",
+      "color": "#6366f1"
+    }
+  ]
+}

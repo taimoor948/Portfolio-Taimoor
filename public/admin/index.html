@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager | Taimoor Portfolio</title>
+    <!--
+      Netlify Identity Widget must be loaded BEFORE the Decap CMS script
+      so the CMS can detect the auth provider on startup.
+    -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!--
+      FIX 1: The Decap CMS script is placed at the END of <body>, NOT in <head>.
+
+      Root cause of "Cannot read properties of null (reading 'appendChild')":
+      When the script tag is in <head>, the browser executes it before <body>
+      exists in the DOM, so document.body === null and the CMS crashes
+      immediately before rendering anything.
+
+      Moving it here guarantees document.body is fully available when the
+      script runs.
+
+      FIX 2: Pinned to an exact version (3.3.3) instead of the semver range
+      "^3.0.0". The caret range is an npm operator; unpkg CDN may not resolve
+      it consistently across edge nodes, causing the script to 404 silently.
+    -->
+    <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+  </body>
+</html>
